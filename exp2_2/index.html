@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Cards</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-img-top {
+            height: 200px;
+            object-fit: cover; /* Ensures images cover the space without distortion */
+        }
+        .card {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+        <div class="row" id="card-container"></div> <!-- Dynamic card container -->
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Array of mountain data
+        const mountainData = [
+    {
+        name: "Mount Everest",
+        description: "Mount Everest is the highest mountain in the world, with a peak that rises 8,848.86 meters above sea level.",
+        imgSrc: "images/everest.jpeg"  // Local path to the image
+    },
+    {
+        name: "K2",
+        description: "K2 is the second-highest mountain on Earth, standing at 8,611 meters. It's known for its extreme difficulty to climb.",
+        imgSrc: "images/k2.jpeg"  // Local path to the image
+    },
+    {
+        name: "Kangchenjunga",
+        description: "Kangchenjunga is the third-highest mountain in the world, with a height of 8,586 meters. It is located on the border between Nepal and India.",
+        imgSrc: "images/kangchenjunga.jpeg"  // Local path to the image
+    }
+];
+
+
+        // Get the card container
+        const cardContainer = document.getElementById('card-container');
+
+        // Loop through the mountain data array and create cards
+        mountainData.forEach(mountain => {
+            const cardHtml = `
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="${mountain.imgSrc}" alt="Image of ${mountain.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${mountain.name}</h5>
+                            <p class="card-text">${mountain.description}</p>
+                            <a href="https://en.wikipedia.org/wiki/${mountain.name.replace(' ', '_')}" target="_blank" class="btn btn-primary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            cardContainer.innerHTML += cardHtml; // Append new card to the container
+        });
+    </script>
+
+</body>
+</html>
