@@ -123,3 +123,7 @@ A simple React app with a responsive navbar and dynamic section colors. The back
 1. **Install Dependencies**:
    ```bash
    npm install react-bootstrap bootstrap react-router-dom
+screenshot:
+<img width="1915" height="788" alt="Screenshot 2026-01-29 100407" src="https://github.com/user-attachments/assets/7dc15eba-2208-4ca4-a087-6de35fb03d3e" />
+
+   
